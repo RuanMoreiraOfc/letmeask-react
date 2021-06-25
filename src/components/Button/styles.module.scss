@@ -1,0 +1,36 @@
+$btn: '.commomBtn';
+
+#{$btn} {
+    height: 5rem;
+
+    padding: 0 3.2rem;
+    margin-top: 6.4rem;
+
+    border: none;
+    border-radius: 0.8rem;
+
+    background-color: #835afd;
+    color: #fff;
+
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition: 0.2s filter;
+
+    // ***
+
+    img { margin-right: 0.8rem; }
+
+    &:hover:not(:disabled) { filter: brightness(0.9); }
+
+    &:disabled {
+        opacity: 0.6;
+
+        cursor: not-allowed;
+    }
+}
