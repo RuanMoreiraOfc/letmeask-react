@@ -2,6 +2,7 @@ $container: '.containerBox';
 $content: '.contentBox';
     $separator: '.contentSeparator';
     $btnCreateRoom: '.btnCreateRoom';
+$newRoom: '.newRoomBox';
 
 // @collapse
 
@@ -92,6 +93,29 @@ $content: '.contentBox';
 
     button {
         margin-top: 1.6rem;
+    }
+}
+
+#{$content}#{$newRoom} {
+    // ***
+
+    h2 {
+        margin: 6.4rem 0 2.4rem;
+
+        font-size: 2.4rem;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    p {
+        margin-top: 1.6rem;
+
+        color: 737386;
+
+        font-size: 1.4rem;
+    }
+
+    a {
+        color: #e559f9;
     }
 }
 
