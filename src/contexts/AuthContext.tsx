@@ -3,8 +3,8 @@ import { createContext, useState, useEffect, ReactNode } from "react";
 import { firebase, auth } from '../services/firebase';
 
 export {
-   Context as AuthContext,
-   ContextProvider as AuthContextProvider,
+   AuthContext,
+   AuthContextProvider,
 };
 
 type UserType = {
@@ -13,21 +13,21 @@ type UserType = {
    avatar: string;
 }
 
-type ContextType = {
+type AuthContextType = {
    user: UserType | undefined;
 
    SingInWithGoogle: () => Promise<void>;
 }
 
-const Context = createContext({} as ContextType);
+const AuthContext = createContext({} as AuthContextType);
 
 //
 
-type ProviderProps = {
+type AuthProviderProps = {
    children: ReactNode;
 }
 
-function ContextProvider( { children }: ProviderProps ) {
+function AuthContextProvider( { children }: AuthProviderProps ) {
    const [ user, setUser ] = useState<UserType>();
 
    useEffect( () => {
@@ -59,13 +59,13 @@ function ContextProvider( { children }: ProviderProps ) {
    // ***
 
    return (
-      <Context.Provider value={{
+      <AuthContext.Provider value={{
          user
 
          , SingInWithGoogle
       }}>
          { children }
-      </Context.Provider>
+      </AuthContext.Provider>
    );
 }
 
