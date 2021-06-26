@@ -17,6 +17,12 @@ body, input, button, textarea {
     font: 400 16px 'Roboto', sans-serif;
 }
 
+a, button {
+    color: currentColor;
+
+    cursor: pointer;
+}
+
 // My Config
 
 html, body, #root {
