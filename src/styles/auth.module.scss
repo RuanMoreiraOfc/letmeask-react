@@ -73,29 +73,6 @@ $newRoom: '.newRoomBox';
     > img { align-self: center; }
 }
 
-#{$content} form {
-    // ***
-
-    input, button {
-        width: 100%;
-    }
-
-    input {
-        height: 5rem;
-
-        padding: 0 1.6rem;
-
-        border: 0.1rem solid #a8a8b3;
-        border-radius: 0.8rem;
-
-        background-color: #fff;
-    }
-
-    button {
-        margin-top: 1.6rem;
-    }
-}
-
 #{$content}#{$newRoom} {
     // ***
 
@@ -119,6 +96,29 @@ $newRoom: '.newRoomBox';
     }
 }
 
+#{$content} form {
+    // ***
+
+    input, button {
+        width: 100%;
+    }
+
+    input {
+        height: 5rem;
+
+        padding: 0 1.6rem;
+
+        border: 0.1rem solid #a8a8b3;
+        border-radius: 0.8rem;
+
+        background-color: #fff;
+    }
+
+    button {
+        margin-top: 1.6rem;
+    }
+}
+
 // ----
 
 #{$separator} {
@@ -130,6 +130,8 @@ $newRoom: '.newRoomBox';
     display: flex;
     align-items: center;
 
+    // ***
+
     &::before, &::after {
         content: '';
 
@@ -137,14 +139,14 @@ $newRoom: '.newRoomBox';
 
         height: 0.1rem;
 
-        margin: 0 1.6rem;
-
         background-color: currentColor;
     }
 
-    &::before { margin-left: 0; }
+    $marginBase: 1.6rem;
 
-    &::after { margin-right: 0; }
+    &::before { margin-right: $marginBase; }
+
+    &::after { margin-left: $marginBase; }
 }
 
 // ----
