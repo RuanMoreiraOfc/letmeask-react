@@ -10,7 +10,7 @@ function Button( { className, ...rest }: ButtonProps ) {
    return (
       <button
          type="button"
-         className={ styles.commomBtn + ( className ? ` ${className}` : '' ) }
+         className={ styles.commonBtn + ( className ? ` ${className}` : '' ) }
          { ...rest }
       />
    );
