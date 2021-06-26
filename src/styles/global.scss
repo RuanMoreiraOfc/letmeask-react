@@ -2,6 +2,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    // ***
+
+    &:focus {
+        border: 0.25rem solid #29292e !important;
+    }
 }
 
 html {
