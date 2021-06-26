@@ -30,7 +30,7 @@ function NewRoom() {
                <form>
                   <input
                      type="text"
-                     placeholder="Digite o código da sala"
+                     placeholder="Digite o nome da sala"
                   />
                   <Button type="submit">Criar sala</Button>
                   <p>Deseja entrar em uma sala existente? <Link to="/">clique aqui</Link></p>
