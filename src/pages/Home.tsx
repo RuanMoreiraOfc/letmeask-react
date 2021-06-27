@@ -4,23 +4,19 @@ import illustrationImg from '../assets/icons/illustration.svg';
 import logoImg from '../assets/icons/logo.svg';
 import googleIconImg from '../assets/icons/google-icon.svg';
 
+import { useState, FormEvent, ChangeEvent } from 'react';
 import { useHistory } from 'react-router-dom';
 
 import useAuth from '../hooks/UseAuth';
+
+import { database } from '../services/firebase';
 
 import Button from '../components/Button';
 
 export default Home;
 
 function Home() {
-   const { user, SingInWithGoogle } = useAuth();
-   const history = useHistory();
-
-   async function HandleCreateRoom() {
-      if ( !user ) await SingInWithGoogle();
-
-      history.push('/rooms/new');
-   }
+   const [roomCode, setRoomCode] = useState('');
 
    // ***
 
@@ -40,30 +36,85 @@ function Home() {
             <strong>Crie salas de Q&amp;A ao-vivo</strong>
             <p>Tire as dúvidas da sua audiência em tempo real</p>
          </aside>
+
          <main>
-            <div className={ contentBox }>
+            <section className={ contentBox }>
                <img src={ logoImg } alt="Letmeask" />
                <Button
                   className={ btnCreateRoom }
-                  onClick={ HandleCreateRoom }
+                  onClick={ InitCreateRoomHandle() }
                >
                   <img src={ googleIconImg } alt="Logo da Google" />
                   Crie uma sala com a Google
                </Button>
                <div className={ contentSeparator }>ou entre em uma sala</div>
-               <form>
+               <form onSubmit={ InitJoinRoomHandle( roomCode ) }>
                   <input
                      type="text"
                      placeholder="Digite o código da sala"
+                     value={ roomCode }
+                     onChange={ InitChangeRoomHandle( setRoomCode ) }
                   />
-                  <Button
-                     type="submit"
-                  >
-                     Entrar na sala
-                  </Button>
+                  <Button type="submit">Entrar na sala</Button>
                </form>
-            </div>
+            </section>
          </main>
       </div>
    );
 }
+
+// #region Private Functions
+
+function InitCreateRoomHandle() {
+   const { user, SingInWithGoogle } = useAuth();
+   const history = useHistory();
+
+   async function Handle() {
+      if ( !user ) await SingInWithGoogle();
+
+      history.push('/rooms/new');
+   }
+
+   return Handle;
+}
+
+function InitJoinRoomHandle( roomCode: string ) {
+   const history = useHistory();
+
+   async function Handle(event: FormEvent) {
+      event.preventDefault();
+
+      if ( roomCode.trim() === '' ) return;
+
+      // ***
+
+      const submitter: HTMLButtonElement = event.currentTarget.querySelector("[type='submit']") || {} as HTMLButtonElement;
+
+      submitter.disabled = true; // ----I
+
+      const roomRef = await database.ref(`rooms/${roomCode}`).get();
+
+      submitter.disabled = false; // ----O
+
+      if ( !roomRef.exists() ) {
+         alert('Room does not exists!');
+         return;
+      }
+
+      // ***
+
+      history.push( `/rooms/${roomRef.key}` )
+   }
+
+   return Handle;
+}
+
+function InitChangeRoomHandle( setRoomCode: (value: string) => void ) {
+   function Handle( { target: { value } }: ChangeEvent<HTMLInputElement> ) {
+      setRoomCode(value);
+   }
+
+   return Handle;
+}
+
+// #endregion Private Functions
