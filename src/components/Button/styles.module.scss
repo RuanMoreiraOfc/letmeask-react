@@ -1,4 +1,5 @@
 $btn: '.commonBtn';
+$isOutlined: '.outlinedBtn';
 
 #{$btn} {
     height: 5rem;
@@ -24,4 +25,11 @@ $btn: '.commonBtn';
     img { margin-right: 0.8rem; }
 
     &:hover:not(:disabled) { filter: brightness(0.9); }
+}
+
+#{$isOutlined} {
+    background-color: #fff;
+    color: #835afd;
+
+    border: 0.1rem solid;
 }
