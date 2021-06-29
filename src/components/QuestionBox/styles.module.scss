@@ -1,4 +1,6 @@
 $container: '.containerBox';
+    $isHighlighted: '.highlightedContainer';
+    $isAnswered: '.answeredContainer';
 
 $user: '.userInfoBox';
 
@@ -75,6 +77,20 @@ $user: '.userInfoBox';
 
         &::after { content: attr(data-count) }
     }
+}
+
+#{$container}#{$isHighlighted} {
+    border: 0.1rem solid #835afd;
+
+    background-color: #f4f0ff;
+}
+
+#{$container}#{$isAnswered} {
+    border: none;
+
+    background-color: #dbdcdd;
+
+    img { filter: grayscale(1) }
 }
 
 // ***

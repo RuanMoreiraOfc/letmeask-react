@@ -4,7 +4,7 @@ import { ReactNode } from 'react';
 
 export default QuestionBox;
 
-type QuestionType = {
+type QuestionBoxType = {
    content: string;
 
    author: {
@@ -12,17 +12,37 @@ type QuestionType = {
       avatar: string;
    }
 
+   isAnswered?: boolean;
+   isHighlighted?: boolean;
+
    children?: ReactNode;
 }
 
-function QuestionBox( { children, content, author: { name, avatar } }: QuestionType ) {
+function QuestionBox( {
+   children
+   , content
+   , author: { name, avatar }
+   , isAnswered = false
+   , isHighlighted = false
+}: QuestionBoxType ) {
    const {
       containerBox
+         , highlightedContainer
+         , answeredContainer
       , userInfoBox
    } = styles;
 
+   const enhancedContainer = (() => {
+      const containerClasses = [containerBox];
+
+      if ( isAnswered ) containerClasses.push(answeredContainer);
+      if ( isHighlighted ) containerClasses.push(highlightedContainer);
+
+      return containerClasses.join(' ');
+   })();
+
    return (
-      <li className={ containerBox }>
+      <li className={ enhancedContainer }>
          <p>{ content }</p>
 
          <footer>
