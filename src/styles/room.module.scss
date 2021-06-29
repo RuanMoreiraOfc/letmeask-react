@@ -10,6 +10,8 @@ $content: '.contentBox';
     $user: '.userBox';
 $questions: '.questionsBox';
     $likeBtn: '.likeBox';
+    $checkBtn: '.checkBox';
+    $answerBtn: '.answerBox';
     $deleteBtn: '.deleteBox';
 
 // ----
@@ -168,6 +170,13 @@ $questions: '.questionsBox';
 
     padding-bottom: 2.4rem;
     margin-top: 3.2rem;
+
+    // ***
+
+    ul {
+        display: flex;
+        gap: 0.8rem;
+    }
 }
 
 #{$questions} button {
@@ -180,6 +189,10 @@ $questions: '.questionsBox';
         &::before { @include mixin_mask_icon('like.svg') }
     }
 
-    &#{$deleteBtn}:hover { color: #e73f5d }
+    &#{$checkBtn}::before { @include mixin_mask_icon('check.svg') }
+
+    &#{$answerBtn}::before { @include mixin_mask_icon('answer.svg') }
+
+    &#{$deleteBtn}:hover { color: #e73f5d !important }
     &#{$deleteBtn}::before { @include mixin_mask_icon('delete.svg') }
 }

@@ -1,6 +1,6 @@
 import styles from '../styles/room.module.scss';
 
-import { useEffect, MouseEvent } from 'react';
+import { useEffect, MouseEvent, Fragment } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import useAuth from '../hooks/UseAuth';
@@ -56,6 +56,8 @@ function AdminRoom() {
       , loadingBox
       , contentBox
       , questionsBox
+         , checkBox
+         , answerBox
          , deleteBox
    } = styles;
 
@@ -87,13 +89,34 @@ function AdminRoom() {
             <ul className={ questionsBox }>
                { [...questions].sort( (a, b) => b.likesCount - a.likesCount ).map( ({ id: questionId, likeId, likesCount, ...rest }) => (
                   <QuestionBox key={ questionId } {...rest}>
+                     { !rest.isAnswered && (
+                        <Fragment>
+                           <li>
+                              <button
+                                 type="button"
+                                 className={ checkBox }
+                                 onClick={ InitCheckQuestionAsAnsweredHandle(roomCode, questionId) }
+                                 aria-label="Marca essa pergunta como respodida"
+                                 data-alt="Check"
+                              />
+                           </li>
+                           <li>
+                              <button
+                                 type="button"
+                                 className={ answerBox }
+                                 onClick={ InitHighlightQuestionHandle(roomCode, questionId) }
+                                 aria-label="Marca essa pergunta como destaque"
+                                 data-alt="Answer"
+                              />
+                           </li>
+                        </Fragment>
+                     ) }
                      <li>
                         <button
                            type="button"
-                           disabled={ !user }
                            className={ deleteBox }
                            onClick={ InitDeleteQuestionHandle(roomCode, questionId) }
-                           aria-label="Deletar essa Pergunta"
+                           aria-label="Deletar essa pergunta"
                            data-alt="Delete"
                         />
                      </li>
@@ -112,18 +135,50 @@ function InitEndRoomHandle(
    roomCode: string
    , history: any
 ) {
+   async function Handle() {
+      if ( window.confirm('Deseja realmente encerrar essa sala?') === false ) return;
+
+      await database.ref(`rooms/${roomCode}`).update({
+         closedAt: new Date()
+      });
+
+      history.push('/');
+   }
+
+   return Handle;
+}
+
+function InitCheckQuestionAsAnsweredHandle(
+   roomCode: string
+   , questionId: string
+) {
+   async function Handle() {
+      if ( window.confirm('Deseja realmente marcar essa pergunta como respondida?') === false ) return;
+
+      await database.ref( `rooms/${roomCode}/questions/${questionId}` ).update({ isAnswered: true });
+   }
+
+   return Handle;
+}
+
+function InitHighlightQuestionHandle(
+   roomCode: string
+   , questionId: string
+) {
+   async function ChangeHighlightState( isHighlighted: boolean ) {
+      const roomRefString = `rooms/${roomCode}/questions/${questionId}`;
+
+      await database.ref( roomRefString ).update({ isHighlighted });
+   }
+
+   // ----
+
    async function Handle( { currentTarget: element }: MouseEvent<HTMLButtonElement> ) {
-      element.disabled = true; // -----I
+      const isActive = element.dataset.isActive === 'true';
 
-      if ( window.confirm('Deseja realmente encerrar essa sala?') ) {
-         await database.ref(`rooms/${roomCode}`).update({
-            closedAt: new Date()
-         });
+      ChangeHighlightState( !isActive );
 
-         history.push('/');
-      }
-
-      element.disabled = false; // -----O
+      element.dataset.isActive = String( !isActive );
    }
 
    return Handle;
@@ -131,16 +186,12 @@ function InitEndRoomHandle(
 
 function InitDeleteQuestionHandle(
    roomCode: string
-   , questionCode: string
+   , questionId: string
 ) {
-   async function Handle( { currentTarget: element }: MouseEvent<HTMLButtonElement> ) {
-      element.disabled = true; // -----I
+   async function Handle() {
+      if ( window.confirm('Deseja realmente excluir essa pergunta?') === false ) return;
 
-      if ( window.confirm('Deseja realmente excluir essa pergunta?') ) {
-         await database.ref(`rooms/${roomCode}/questions/${questionCode}`).remove();
-      }
-
-      element.disabled = false; // -----O
+      await database.ref(`rooms/${roomCode}/questions/${questionId}`).remove();
    }
 
    return Handle;
