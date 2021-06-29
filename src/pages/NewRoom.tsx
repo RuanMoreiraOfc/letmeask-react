@@ -10,6 +10,7 @@ import useAuth from '../hooks/UseAuth';
 import { database } from '../services/firebase';
 
 import AsideInfo from '../components/AsideInfo';
+import ButtonSignOut from '../components/ButtonSignOut';
 import Button from '../components/Button';
 
 export default NewRoom;
@@ -35,6 +36,7 @@ function NewRoom() {
    return (
       <div className={ containerBox }>
          <AsideInfo />
+         <ButtonSignOut />
 
          <main>
             <section className={ `${contentBox} ${newRoomBox}` }>

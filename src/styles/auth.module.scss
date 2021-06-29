@@ -11,6 +11,16 @@ $newRoom: '.newRoomBox';
 
     display: flex;
     align-items: stretch;
+
+    position: relative;
+
+    > button {
+        $distanceFromCorner: 2.5rem;
+
+        position: absolute;
+        top: $distanceFromCorner;
+        right: $distanceFromCorner;
+    }
 }
 
 #{$container} main {
