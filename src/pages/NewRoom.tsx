@@ -1,6 +1,5 @@
 import styles from '../styles/auth.module.scss';
 
-import illustrationImg from '../assets/icons/illustration.svg';
 import logoImg from '../assets/icons/logo.svg';
 
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
@@ -49,7 +48,7 @@ function NewRoom() {
                      onChange={ InitChangeRoomHandle( setNewRoom ) }
                   />
                   <Button type="submit">Criar sala</Button>
-                  <p>Deseja entrar em uma sala existente? <Link to="/">clique aqui</Link></p>
+                  <p>Deseja entrar em uma sala existente? <Link to='/' replace>clique aqui</Link></p>
                </form>
             </section>
          </main>
@@ -79,7 +78,7 @@ function InitCreateRoomHandle( newRoom: string ) {
          , authorId: user?.id
       });
 
-      history.push( `/rooms/${firebaseRooms.key}` )
+      history.push( `/admin/rooms/${firebaseRooms.key}` )
    }
 
    return Handle;

@@ -1,6 +1,5 @@
 import styles from '../styles/auth.module.scss';
 
-import illustrationImg from '../assets/icons/illustration.svg';
 import logoImg from '../assets/icons/logo.svg';
 import googleIconImg from '../assets/icons/google-icon.svg';
 
@@ -69,7 +68,7 @@ function InitCreateRoomHandle() {
    async function Handle() {
       if ( !user ) await SingInWithGoogle();
 
-      history.push('/rooms/new');
+      history.replace('/rooms/new');
    }
 
    return Handle;
@@ -98,9 +97,7 @@ function InitJoinRoomHandle( roomCode: string ) {
          return;
       }
 
-      // ***
-
-      history.push( `/rooms/${roomRef.key}` )
+      history.push( `/rooms/${roomRef.key}` );
    }
 
    return Handle;
