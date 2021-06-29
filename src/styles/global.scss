@@ -29,6 +29,12 @@ a, button {
     cursor: pointer;
 }
 
+button:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
 // My Config
 
 html, body, #root {

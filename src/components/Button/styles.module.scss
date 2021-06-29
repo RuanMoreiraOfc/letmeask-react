@@ -4,7 +4,6 @@ $btn: '.commonBtn';
     height: 5rem;
 
     padding: 0 3.2rem;
-    // margin-top: 6.4rem;
 
     border: none;
     border-radius: 0.8rem;
@@ -25,10 +24,4 @@ $btn: '.commonBtn';
     img { margin-right: 0.8rem; }
 
     &:hover:not(:disabled) { filter: brightness(0.9); }
-
-    &:disabled {
-        opacity: 0.6;
-
-        cursor: not-allowed;
-    }
 }
