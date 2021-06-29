@@ -1,0 +1,23 @@
+$btnSignOut: '.containerBox';
+
+#{$btnSignOut} {
+    $sizeBase: 4rem;
+
+    overflow: hidden;
+
+    width: $sizeBase;
+    height: $sizeBase;
+
+    border: none;
+    border-radius: 50%;
+
+    background-color: transparent;
+
+    transition: 0.2s filter;
+
+    // ***
+
+    &:hover { filter: grayscale(1) }
+
+    img { width: 100% }
+}
