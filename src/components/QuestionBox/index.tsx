@@ -16,12 +16,17 @@ type QuestionType = {
 }
 
 function QuestionBox( { children, content, author: { name, avatar } }: QuestionType ) {
+   const {
+      containerBox
+      , userInfoBox
+   } = styles;
+
    return (
-      <li className={ styles.containerBox }>
+      <li className={ containerBox }>
          <p>{ content }</p>
 
          <footer>
-            <section className={ styles.userInfoBox }>
+            <section className={ userInfoBox }>
                <img src={ avatar } alt={ name } />
                <span>{ name }</span>
             </section>
