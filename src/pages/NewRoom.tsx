@@ -10,6 +10,7 @@ import useAuth from '../hooks/UseAuth';
 
 import { database } from '../services/firebase';
 
+import AsideInfo from '../components/AsideInfo';
 import Button from '../components/Button';
 
 export default NewRoom;
@@ -34,11 +35,7 @@ function NewRoom() {
 
    return (
       <div className={ containerBox }>
-         <aside>
-            <img src={ illustrationImg } alt="Ilustração simbolizando pergunta em respostas" />
-            <strong>Crie salas de Q&amp;A ao-vivo</strong>
-            <p>Tire as dúvidas da sua audiência em tempo real</p>
-         </aside>
+         <AsideInfo />
 
          <main>
             <section className={ `${contentBox} ${newRoomBox}` }>
