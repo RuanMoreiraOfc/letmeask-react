@@ -1,7 +1,5 @@
 import styles from '../styles/room.module.scss';
 
-import logoImg from '../assets/icons/logo.svg';
-
 import { useState, useEffect, FormEvent, ChangeEvent, KeyboardEvent } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -10,7 +8,7 @@ import useAuth from '../hooks/UseAuth';
 import { database } from '../services/firebase';
 
 import Button from '../components/Button';
-import ButtonRoomCode from '../components/ButtonRoomCode';
+import HeaderRoom from '../components/HeaderRoom';
 
 export default Room;
 
@@ -89,7 +87,6 @@ function Room() {
 
    const {
       containerBox
-      , headerBox
       , loadingBox
       , contentBox
       , userBox
@@ -97,12 +94,7 @@ function Room() {
 
    return (
       <div className={ containerBox }>
-         <header className={ headerBox }>
-            <section>
-               <img src={logoImg} alt="Letmeask" />
-               <ButtonRoomCode code={ roomCode } />
-            </section>
-         </header>
+         <HeaderRoom roomCode={ roomCode }/>
 
          { isLoading && ( <span className={ loadingBox }/> ) }
 
