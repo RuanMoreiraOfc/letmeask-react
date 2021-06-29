@@ -1,34 +1,18 @@
-$container: '.containerBox';
-$header: '.headerBox';
-$loading: '.loadingBox';
-$content: '.contentBox';
-$user: '.userBox';
+@function get_assets_icon($icon) {
+    $assetsPath: '../assets/icons/';
 
-// ----
-
-#{$header} {
-    padding: 2.4rem;
-
-    border: 0.1rem solid #e2e2e2;
-
-    // ***
-
-    section {
-        max-width: 112rem;
-
-        margin: 0 auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    img {
-        max-height: 4.5rem;
-    }
+    @return #{$assetsPath}#{$icon};
 }
 
-// ***
+$container: '.containerBox';
+$loading: '.loadingBox';
+$content: '.contentBox';
+    $user: '.userBox';
+$questions: '.questionsBox';
+    $likeBtn: '.likeBox';
+    $deleteBtn: '.deleteBox';
+
+// ----
 
 #{$loading} {
     font-size: 10rem;
@@ -177,4 +161,24 @@ $user: '.userBox';
         font-size: 1.4rem;
         font-weight: 500;
     }
+}
+
+#{$questions} {
+    list-style: none;
+
+    padding-bottom: 2.4rem;
+    margin-top: 3.2rem;
+}
+
+#{$questions} button {
+    @mixin mixin_mask_icon($icon) { mask-image: url( get_assets_icon($icon) ) }
+
+    &#{$likeBtn} {
+        direction: rtl;
+
+        &[data-count] { grid-template-columns: repeat(2, 1fr) }
+        &::before { @include mixin_mask_icon('like.svg') }
+    }
+
+    &#{$deleteBtn}::before { @include mixin_mask_icon('delete.svg') }
 }

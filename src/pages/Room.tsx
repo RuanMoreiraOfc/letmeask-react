@@ -1,6 +1,6 @@
 import styles from '../styles/room.module.scss';
 
-import { useState, useEffect, FormEvent, ChangeEvent, KeyboardEvent } from 'react';
+import { useState, useEffect, FormEvent, ChangeEvent, KeyboardEvent, MouseEvent } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 
 import useAuth from '../hooks/UseAuth';
@@ -8,8 +8,9 @@ import useRoom from '../hooks/UseRoom';
 
 import { database } from '../services/firebase';
 
-import Button from '../components/Button';
 import HeaderRoom from '../components/HeaderRoom';
+import Button from '../components/Button';
+import QuestionBox from '../components/QuestionBox';
 
 export default Room;
 
@@ -39,6 +40,8 @@ function Room() {
       , loadingBox
       , contentBox
          , userBox
+      , questionsBox
+         , likeBox
    } = styles;
 
    return (
@@ -77,7 +80,23 @@ function Room() {
                </footer>
             </form>
 
-         <pre style={ { whiteSpace: 'pre-wrap' } }>{JSON.stringify( questions )}</pre>
+            <ul className={ questionsBox }>
+               { questions.map( ({ id: questionId, likeId, likesCount, ...rest }) => (
+                  <QuestionBox key={ questionId } {...rest}>
+                     <li>
+                        <button
+                           type="button"
+                           disabled={ !user }
+                           className={ likeBox }
+                           onClick={ InitLikeQuestionHandle(roomCode, questionId, likeId, user?.id) }
+                           aria-label="Marcar essa pergunta como gostei"
+                           data-alt="Like"
+                           data-count={ likesCount > 0 ? likesCount : undefined }
+                        />
+                     </li>
+                  </QuestionBox>
+               ) ) }
+            </ul>
          </main>
       </div>
    );
@@ -135,6 +154,31 @@ function InitSendQuestionByKeyboardHandle( key: string = 'Enter' ) {
       if ( pressedKey !== key ) return;
 
       form?.querySelector<HTMLInputElement>('[type=submit]')?.click();
+   }
+
+   return Handle;
+}
+
+function InitLikeQuestionHandle( roomCode: string, questionId: string, likeId?: string, authorId?: string ) {
+   const roomRefString = `rooms/${roomCode}/questions/${questionId}/likes`
+
+   async function Like() {
+      await database.ref( roomRefString ).push({ authorId });
+   }
+
+   async function Unlike() {
+      await database.ref(`${roomRefString}/${likeId}`).remove();
+   }
+
+   // ----
+
+   async function Handle( { currentTarget: element }: MouseEvent<HTMLButtonElement> ) {
+      const isActive = element.dataset.isActive === 'true';
+
+      if ( !isActive ) await Like();
+      if ( isActive ) await Unlike();
+
+      element.dataset.isActive = String( !isActive );
    }
 
    return Handle;
