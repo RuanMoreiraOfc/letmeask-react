@@ -62,11 +62,11 @@ function Home() {
 // #region Private Functions
 
 function InitCreateRoomHandle() {
-   const { user, SingInWithGoogle } = useAuth();
+   const { user, SignInWithGoogle } = useAuth();
    const history = useHistory();
 
    async function Handle() {
-      if ( !user ) await SingInWithGoogle();
+      if ( !user ) await SignInWithGoogle();
 
       history.replace('/rooms/new');
    }

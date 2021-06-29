@@ -23,7 +23,7 @@ function Room() {
 
    const { id: roomCode } = useParams<RoomParamsType>();
 
-   const { user, SingInWithGoogle } = useAuth();
+   const { user, SignInWithGoogle } = useAuth();
    const history = useHistory();
    const { isClosed, title: roomTitle, questions } = useRoom( roomCode );
 
@@ -69,7 +69,7 @@ function Room() {
 
                <footer>
                   { !user ? (
-                     <span>Para enviar uma pergunta, <button type="button" onClick={ SingInWithGoogle }>faça seu login</button></span>
+                     <span>Para enviar uma pergunta, <button type="button" onClick={ SignInWithGoogle }>faça seu login</button></span>
                   ) : (
                      <div className={ userBox }>
                         <img src={ user.avatar } alt={ user.name } />
