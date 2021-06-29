@@ -83,17 +83,19 @@ function Room() {
             <ul className={ questionsBox }>
                { questions.map( ({ id: questionId, likeId, likesCount, ...rest }) => (
                   <QuestionBox key={ questionId } {...rest}>
-                     <li>
-                        <button
-                           type="button"
-                           disabled={ !user }
-                           className={ likeBox }
-                           onClick={ InitLikeQuestionHandle(roomCode, questionId, likeId, user?.id) }
-                           aria-label="Marcar essa pergunta como gostei"
-                           data-alt="Like"
-                           data-count={ likesCount > 0 ? likesCount : undefined }
-                        />
-                     </li>
+                     { !rest.isAnswered && (
+                        <li>
+                           <button
+                              type="button"
+                              disabled={ !user }
+                              className={ likeBox }
+                              onClick={ InitLikeQuestionHandle(roomCode, questionId, likeId, user?.id) }
+                              aria-label="Marcar essa pergunta como gostei"
+                              data-alt="Like"
+                              data-count={ likesCount > 0 ? likesCount : undefined }
+                           />
+                        </li>
+                     ) }
                   </QuestionBox>
                ) ) }
             </ul>
