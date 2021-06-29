@@ -20,7 +20,7 @@ type FirebaseQuestionType = {
        avatar: string;
     }
 
-    isAnsewered: boolean;
+    isAnswered: boolean;
     isHighlighted: boolean;
 
     likes: Record<string, {

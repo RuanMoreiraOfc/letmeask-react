@@ -125,7 +125,7 @@ function InitSendQuestionHandle( newQuestion: string, setNewQuestion: (value: st
             name: user?.name
             , avatar: user?.avatar
          }
-         , isAnsewered: false
+         , isAnswered: false
          , isHighlighted: false
       }
 
@@ -160,7 +160,7 @@ function InitSendQuestionByKeyboardHandle( key: string = 'Enter' ) {
 }
 
 function InitLikeQuestionHandle( roomCode: string, questionId: string, likeId?: string, authorId?: string ) {
-   const roomRefString = `rooms/${roomCode}/questions/${questionId}/likes`
+   const roomRefString = `rooms/${roomCode}/questions/${questionId}/likes`;
 
    async function Like() {
       await database.ref( roomRefString ).push({ authorId });
