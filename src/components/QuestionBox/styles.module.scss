@@ -43,13 +43,18 @@ $user: '.userInfoBox';
 
         position: relative;
 
-        transition: 0.2s filter;
+        transition-duration: 0.2s;
+        transition-property: filter, color;
 
         // ***
 
         &[data-is-active=true] { color: #835afd }
 
-        &:hover:not(:disabled) { filter: brightness(0.8) }
+        &:hover:not(:disabled) {
+            color: #835afd;
+
+            filter: brightness(0.8);
+        }
 
         &::before {
             @supports not ( mask-image: initial ) {

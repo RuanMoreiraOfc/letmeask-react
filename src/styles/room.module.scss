@@ -180,5 +180,6 @@ $questions: '.questionsBox';
         &::before { @include mixin_mask_icon('like.svg') }
     }
 
+    &#{$deleteBtn}:hover { color: #e73f5d }
     &#{$deleteBtn}::before { @include mixin_mask_icon('delete.svg') }
 }
