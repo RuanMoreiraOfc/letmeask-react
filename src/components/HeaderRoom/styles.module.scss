@@ -1,0 +1,44 @@
+$header: '.containerBox';
+
+// ----
+
+#{$header} {
+    padding: 2.4rem;
+
+    border: 0.1rem solid #e2e2e2;
+
+    background-color: #fefefe;
+
+    z-index: 1;
+
+    position: sticky;
+    top: 0;
+    bottom: 0;
+
+    // ***
+
+    section {
+        max-width: 112rem;
+
+        margin: 0 auto;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    img {
+        max-height: 4.5rem;
+    }
+
+    div {
+        display: flex;
+        gap: 1.6rem;
+
+        // ***
+
+        button {
+            height: auto;
+        }
+    }
+}
