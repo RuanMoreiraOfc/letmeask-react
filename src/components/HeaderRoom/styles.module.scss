@@ -17,6 +17,14 @@ $header: '.containerBox';
 
     // ***
 
+    > button {
+        position: absolute;
+        top: 50%;
+        right: 5vh;
+
+        transform: translateY(-50%);
+    }
+
     section {
         max-width: 112rem;
 

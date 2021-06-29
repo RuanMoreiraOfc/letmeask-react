@@ -6,6 +6,7 @@ import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
 import ButtonRoomCode from '../ButtonRoomCode';
+import ButtonSignOut from '../ButtonSignOut';
 
 export default HeaderRoom;
 
@@ -26,6 +27,7 @@ function HeaderRoom( { roomCode, children }: HeaderRoomProps ) {
                { children }
             </div>
          </section>
+         <ButtonSignOut />
       </header>
    );
 }
