@@ -4,6 +4,7 @@ import { useState, useEffect, FormEvent, ChangeEvent, KeyboardEvent } from 'reac
 import { useParams, useHistory } from 'react-router-dom';
 
 import useAuth from '../hooks/UseAuth';
+import useRoom from '../hooks/UseRoom';
 
 import { database } from '../services/firebase';
 
@@ -16,72 +17,20 @@ type RoomParamsType = {
    id: string;
 }
 
-type FirebaseQuestionType = {
-   content: string;
-
-   author: {
-      name: string;
-      avatar: string;
-   }
-
-   isAnsewered: boolean;
-   isHighlighted: boolean;
-}
-
-type QuestionType = RoomParamsType & FirebaseQuestionType;
-
 function Room() {
-   const [isLoading, setIsLoading] = useState(true);
-
-   const [title, setTitle] = useState('');
-   const [questions, setQuestions] = useState<QuestionType[]>([]);
    const [newQuestion, setNewQuestion] = useState('');
 
-   const { user, SingInWithGoogle } = useAuth();
    const { id: roomCode } = useParams<RoomParamsType>();
+
+   const { user, SingInWithGoogle } = useAuth();
    const history = useHistory();
+   const { isClosed, title: roomTitle, questions } = useRoom( roomCode );
 
-   // ***
+   const isLoading = !roomTitle;
 
-   useEffect(() => {
-      const thisRoom = `rooms/${roomCode}`;
-
-      const roomRef = database.ref(thisRoom);
-      const questionsRef = database.ref(`${thisRoom}/questions`);
-
-      // ----
-
-      roomRef.once( 'value', roomState => {
-         const roomData = roomState.val();
-
-         if ( !roomData ) {
-            history.replace('/');
-            return;
-         }
-
-         setTitle( roomData.title );
-         setIsLoading( false );
-      } );
-
-      // ***
-
-      questionsRef.on( 'child_added', questionState => {
-         const id = questionState.key || '';
-         const data: FirebaseQuestionType = questionState.val();
-
-         const parsedQuestion: QuestionType = { id, ...data };
-
-         setQuestions( lastState => lastState.concat(parsedQuestion) );
-      } );
-
-      // ***
-
-      function unsubscribe() {
-         questionsRef.off( 'child_added' );
-      }
-
-      return unsubscribe;
-   }, [roomCode, history]);
+   useEffect( () => {
+      if ( roomTitle === '' || isClosed ) history.replace('/');
+   } , [roomTitle, isClosed, history] );
 
    // ***
 
@@ -89,7 +38,7 @@ function Room() {
       containerBox
       , loadingBox
       , contentBox
-      , userBox
+         , userBox
    } = styles;
 
    return (
@@ -103,7 +52,7 @@ function Room() {
             style={ isLoading ? {display: 'none'} : {} }
          >
             <header>
-               <h1>Sala - { title }</h1>
+               <h1>Sala - { roomTitle }</h1>
                { questions.length > 0 && ( <span>{ questions.length } pergunta(s)</span> ) }
             </header>
 
