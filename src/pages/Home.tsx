@@ -97,6 +97,13 @@ function InitJoinRoomHandle( roomCode: string ) {
          return;
       }
 
+      if ( roomRef.val().closedAt ) {
+         alert('Room is already closed!');
+         return;
+      }
+
+      // ***
+
       history.push( `/rooms/${roomRef.key}` );
    }
 
