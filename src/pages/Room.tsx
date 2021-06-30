@@ -31,7 +31,21 @@ function Room() {
 
    useEffect( () => {
       if ( roomTitle === '' || isClosed ) history.replace('/');
-   } , [roomTitle, isClosed, history] );
+
+      // ***
+
+      const roomRef = database.ref(`rooms/${roomCode}`);
+
+      roomRef.on( 'child_removed', state => {
+         if ( state.key === 'title' ) history.replace('/');
+      } );
+
+      function unsubscribe() {
+         roomRef.off( 'child_removed' );
+      }
+
+      return unsubscribe;
+   } , [roomTitle, roomCode, isClosed, history] );
 
    // ***
 
