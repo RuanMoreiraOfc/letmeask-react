@@ -93,6 +93,7 @@ function Room() {
                               aria-label="Marcar essa pergunta como gostei"
                               data-alt="Like"
                               data-count={ likesCount > 0 ? likesCount : undefined }
+                              data-is-active={ String( Boolean(likeId) ) }
                            />
                         </li>
                      ) }
