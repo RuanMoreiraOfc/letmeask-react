@@ -1,4 +1,6 @@
 $container: '.containerBox';
+$primary: '.primary';
+$secondary: '.secondary';
 
 // ----
 
@@ -7,7 +9,7 @@ $container: '.containerBox';
 
     padding: 12rem 8rem;
 
-    background-color: #835afd;
+    background-color: var(--clr-primary);
     color: #fff;
 
     display: flex;
@@ -16,7 +18,13 @@ $container: '.containerBox';
 
     // ***
 
-    img { max-width: 32rem; }
+    div { padding: 0 0.25rem }
+
+    svg {
+        // ***
+        #{$primary} { color: var(--clr-primary) }
+        #{$secondary} { color: var(--clr-secondary) }
+    }
 
     strong {
         margin-top: 1.6rem;
