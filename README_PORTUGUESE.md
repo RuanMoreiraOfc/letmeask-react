@@ -1,77 +1,70 @@
-<h1 align="center">Letmeask</h1>
+<h1 align="center">
 
-<p align="center">
-  <a href="README.md">ENGLISH</a>
+  Letmeask
+</h1>
+
+<div align="center">
+
+  [ENGLISH][lang-en]
   |
-  <a>PORTUGUÊS</a>
+  [PORTUGUÊS][lang-pt]
   |
-  <a>日本語</a>
-</p>
+  [日本語][lang-jp]
+</div>
 
-<p align="center">
-    <a href="#">
-      <img src="https://img.shields.io/github/languages/count/ruanmoreiraofc/letmeask-react?label=Languages&style=for-the-badge">
-    </a>
-    <a href="#">
-      <img src="https://img.shields.io/github/last-commit/ruanmoreiraofc/letmeask-react?style=for-the-badge">
-    </a>
-    <a href="#CLONE">
-      <img src="https://img.shields.io/github/repo-size/ruanmoreiraofc/letmeask-react?label=Last%20Git&style=for-the-badge">
-    </a>
-    <a href="#">
-      <img src="https://img.shields.io/github/languages/code-size/ruanmoreiraofc/letmeask-react?label=Code&style=for-the-badge">
-    </a>
-    <a href="#LICENSE">
-      <img src="https://img.shields.io/github/license/ruanmoreiraofc/letmeask-react?label=License&style=for-the-badge">
-    </a>
-    <a href="https://github.com/ruanmoreiraofc/letmeask-react/issues?q=is%3Aopen">
-      <img src="https://img.shields.io/github/issues/ruanmoreiraofc/letmeask-react?style=for-the-badge">
-    </a>
-</p>
+<div align="center">
 
-## Sobre <span id="ABOUT"></span>
+  [![card-languages]][btn-null]
+  [![card-last-commit]][btn-null]
+  [![card-repo-size]][btn-goto-clone]
+  [![card-code-size]][btn-null]
+  [![card-license]][btn-goto-license]
+  [![card-issues]][btn-goto-issues]
+</div>
+
+## Sobre <span id="id-about"/>
 
 **Letmeask** foi criado com objetivo de criar uma melhor interatividade entre o streamer e a audiência, por criar salas de Q&A em tempo real.
 
-Projeto feito durante **NLW#6(Next Level Week)** com **[Diego Fernandes](https://github.com/diego3g)** na Trilha de React.
+Projeto feito durante **NLW#6(Next Level Week)** com **[Diego Fernandes][btn-tutor]** na Trilha de React.
 
-Esta **branch** é a **base** da aplicação, maior parte do código foi feito pelo **[Diego Fernandes](https://github.com/diego3g)**.
+Essa branch é o **NEXT LEVEL** desta aplicação.
 
-O <strong>NEXT LEVEL</strong> desta aplicação esta [aqui](https://github.com/ruanmoreiraofc/letmeask-react/tree/next-level).
-
-## :triangular_ruler: Tecnologia <span id="TECHNOLOGY"/>
+## :triangular_ruler: Tecnologia <span id="id-about"/>
 
 As seguintes ferramentas foram usadas na construção do projeto:
 
-- [TypeScript](https://www.typescriptlang.org)
-- [React](https://reactjs.org)
-- [React Router](https://github.com/ReactTraining/react-router)
-- [Firebase](https://firebase.google.com/)
+- [TypeScript]
+- [React]
+- [React Router]
+- [Firebase]
 
-## :camera: Screenshots <span id="LOOKING"/>
+## :camera: Screenshots <span id="id-looking"/>
 
-##### [Pular Screenshots](#CLONE)
+##### [Pular Screenshots][btn-skip]
 
 ### Home:
-![Home](https://user-images.githubusercontent.com/36450847/124034099-2cec2d80-d9d1-11eb-9b8a-cc1542848b07.jpg)
+![Home]
 
 ### Criando uma nova sala:
-![Creating New Room](https://user-images.githubusercontent.com/36450847/124034137-37a6c280-d9d1-11eb-9317-21c24d83cc8d.jpg)
+![Creating New Room]
 
-### Visão do Administrador:
-![Admin View](https://user-images.githubusercontent.com/36450847/124034180-45f4de80-d9d1-11eb-82e2-e155ac0b6c01.jpg)
+### Visão do administrador:
+![Admin View]
 
-### Visão do Público:
-![Audience View](https://user-images.githubusercontent.com/36450847/124034175-43928480-d9d1-11eb-8e98-a16fb9c83f92.jpg)
+### Visão do público:
+![Audience View]
 
-## :electric_plug: Pré-requisitos <span id="CLONE"/>
+## [:eyes: Preview][btn-preview] <span id="id-preview"/>
+
+## :electric_plug: Pré-requisitos <span id="id-clone"/>
 
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 
-- [Git](https://git-scm.com)
-- [Node.js](https://nodejs.org)
+- [Git][btn-git]
+- [Node.js][btn-node]
 
-Além disto é bom ter um editor para trabalhar com o código como [VSCode](https://code.visualstudio.com).
+Além disto é bom ter um editor para trabalhar com o código como [VSCode][btn-vscode].
 
 ## :bulb: Faça você mesmo
 
@@ -79,7 +72,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ###### - para clonar o repositório
 ```bash
-git clone --branch master https://github.com/ruanmoreiraofc/letmeask-react.git
+git clone --branch next-level https://github.com/ruanmoreiraofc/letmeask-react.git
 ```
 ###### - para entrar na pasta
 ```bash
@@ -90,7 +83,7 @@ cd letmeask-react
 npm install
 ```
 
-Com as dependências instaladas, crie um arquivo .env como o deste [exemplo](.env.template).
+Com as dependências instaladas, crie um arquivo .env como o deste [exemplo][btn-example].
 
 ##### Com as dependências instaladas, rode a aplicação:
 
@@ -100,42 +93,85 @@ npm run start
 ```
 
 ##### Ao finalizar você deverá abrir o seu navegador no seguinte url:
-- [localhost:3000](http://localhost:3000)
+- [localhost:3000][btn-localhost]
 
-## :balance_scale: License <span id="LICENSE"/>
+## :balance_scale: Licença <span id="id-license"/>
 
-Este projeto está sob a Licença MIT. Leia a [LICENÇA](LICENSE) para mais informações.
+Este projeto está sob a Licença MIT. Leia a [LICENÇA][btn-license] para mais informações.
 
-# :boy: Autor <span id="AUTHOR"/>
+# :boy: Autor <span id="id-author"/>
 
-<span>
 <div align="center">
+
   <p>
     <img
-      alt="Autor - Ruan Moreira de Jesus"
+      alt="author-img"
       title="Ruan Moreira de Jesus"
       width="100"
-      src="http://github.com/ruanmoreiraofc.png">
+      src="https://github.com/ruanmoreiraofc.png">
   </p>
 
   Feito com :heart: por Ruan Moreira de Jesus!
 
-  <a href="mailto:ruanmoreiraofc@hotmail.com" title="Entre em contanto!" target="_blank">
-    <img alt="Email - Ruan Moreira de Jesus"
-      src="https://img.shields.io/badge/Email--$?style=social&logo=microsoft-outlook" >
-  </a>
-
-  <a>
-    <img
-      alt="Discord - RuanMoreiraOfc#7904"
-      title="RuanMoreiraOfc#7904"
-      src="https://img.shields.io/badge/Discord--$?style=social&logo=discord" >
-  </a>
-
-  <a href="https://github.com/ruanmoreiraofc" title="Meu Github" target="_blank">
-    <img
-      alt="Github - RuanMoreiraOfc"
-      src="https://img.shields.io/github/followers/ruanmoreiraofc?style=social">
-  </a>
+  [![author-card-email]][author-btn-email]
+  [![author-card-discord]][author-btn-discord]
+  [![author-card-github]][author-btn-github]
 </div>
-</span>
+
+<!--
+  ***---- VARIABLES ----***
+-->
+[btn-null]: #
+
+<!-- *** AUTHOR *** -->
+[author-img]: https://github.com/ruanmoreiraofc.png?size=100 "Ruan Moreira de Jesus"
+
+[author-card-email]: https://img.shields.io/badge/Email--$?style=social&logo=microsoft-outlook
+[author-card-discord]: https://img.shields.io/badge/Discord--$?style=social&logo=discord
+[author-card-github]: https://img.shields.io/github/followers/ruanmoreiraofc?style=social
+
+[author-btn-email]: mailto:ruanmoreiraofc@hotmail.com "Entre em contato!"
+[author-btn-discord]: #RuanMoreiraOfc#7904 "RuanMoreiraOfc#7904"
+[author-btn-github]: https://github.com/ruanmoreiraofc "Meu Github"
+
+<!-- *** LANGUAGES README *** -->
+[lang-en]: README.md
+[lang-pt]: #
+[lang-jp]: #
+
+<!-- *** INFO CARDS *** -->
+[card-languages]: https://img.shields.io/github/languages/count/ruanmoreiraofc/letmeask-react?style=for-the-badge&label=Languagens
+[card-last-commit]: https://img.shields.io/github/last-commit/ruanmoreiraofc/letmeask-react?style=for-the-badge&label=Último%20Commit
+[card-repo-size]: https://img.shields.io/github/repo-size/ruanmoreiraofc/letmeask-react?style=for-the-badge&label=Repositório
+[card-code-size]: https://img.shields.io/github/languages/code-size/ruanmoreiraofc/letmeask-react?style=for-the-badge&label=Código
+[card-license]: https://img.shields.io/github/license/ruanmoreiraofc/letmeask-react?style=for-the-badge&label=Licença
+[card-issues]: https://img.shields.io/github/issues/ruanmoreiraofc/letmeask-react?style=for-the-badge
+
+<!-- *** MAIN BUTTONS *** -->
+[btn-tutor]: https://github.com/diego3g "CTO na Rocketseat"
+[btn-git]: https://git-scm.com
+[btn-node]: https://nodejs.org
+[btn-vscode]: https://code.visualstudio.com
+
+[btn-skip]: #id-preview
+[btn-goto-clone]: #id-clone
+[btn-goto-license]: #id-license
+[btn-goto-issues]: https://github.com/ruanmoreiraofc/letmeask-react/issues?q=is%3Aopen
+
+[btn-next-level]: #
+[btn-preview]: https://letmeask-nonext.web.app
+[btn-example]: .env.template
+[btn-localhost]: http://localhost:3000
+[btn-license]: LICENSE
+
+<!-- *** TECHNOLOGY *** -->
+[TypeScript]: https://www.typescriptlang.org
+[React]: https://reactjs.org
+[React Router]: https://github.com/ReactTraining/react-router
+[Firebase]: https://firebase.google.com
+
+<!-- *** SCREENSHOTS *** -->
+[Home]: https://user-images.githubusercontent.com/36450847/124034099-2cec2d80-d9d1-11eb-9b8a-cc1542848b07.jpg
+[Creating New Room]: https://user-images.githubusercontent.com/36450847/124034137-37a6c280-d9d1-11eb-9317-21c24d83cc8d.jpg
+[Admin View]: https://user-images.githubusercontent.com/36450847/124034180-45f4de80-d9d1-11eb-82e2-e155ac0b6c01.jpg
+[Audience View]: https://user-images.githubusercontent.com/36450847/124034175-43928480-d9d1-11eb-8e98-a16fb9c83f92.jpg
