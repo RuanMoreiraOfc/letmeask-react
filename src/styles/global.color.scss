@@ -1,0 +1,23 @@
+:root {
+    --hue-primary: 255;
+    --hue-secondary: 48;
+    --hue-complementary: 21;
+
+    --clr-primary: hsl(
+        var(--hue-primary)
+        , 98%
+        , 67%
+    );
+
+    --clr-secondary: hsl(
+        calc( var(--hue-primary) + var(--hue-secondary) )
+        , 100%
+        , 67%
+    );
+
+    --clr-complementary: hsl(
+        calc( var(--hue-primary) - var(--hue-complementary) )
+        , 100%
+        , 64%
+    );
+}
