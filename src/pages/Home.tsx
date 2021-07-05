@@ -1,6 +1,5 @@
 import styles from '../styles/auth.module.scss';
 
-import logoImg from '../assets/icons/logo.svg';
 import googleIconImg from '../assets/icons/google-icon.svg';
 
 import { useState, FormEvent, ChangeEvent } from 'react';
@@ -12,6 +11,7 @@ import { database } from '../services/firebase';
 
 import AsideInfo from '../components/AsideInfo';
 import ButtonSignOut from '../components/ButtonSignOut';
+import Logo from '../components/Logo';
 import Button from '../components/Button';
 
 export default Home;
@@ -24,6 +24,7 @@ function Home() {
    const {
       containerBox
       , contentBox
+         , logoBox
 
       , contentSeparator
 
@@ -37,7 +38,7 @@ function Home() {
 
          <main>
             <section className={ contentBox }>
-               <img src={ logoImg } alt="Letmeask" />
+               <Logo className={ logoBox } />
                <Button
                   className={ btnCreateRoom }
                   onClick={ InitCreateRoomHandle() }

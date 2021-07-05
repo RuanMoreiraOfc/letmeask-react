@@ -1,7 +1,5 @@
 import styles from '../styles/auth.module.scss';
 
-import logoImg from '../assets/icons/logo.svg';
-
 import { useState, useEffect, FormEvent, ChangeEvent } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
@@ -11,6 +9,7 @@ import { database } from '../services/firebase';
 
 import AsideInfo from '../components/AsideInfo';
 import ButtonSignOut from '../components/ButtonSignOut';
+import Logo from '../components/Logo';
 import Button from '../components/Button';
 
 export default NewRoom;
@@ -30,6 +29,7 @@ function NewRoom() {
    const {
       containerBox
       , contentBox
+         , logoBox
       , newRoomBox
    } = styles;
 
@@ -40,7 +40,7 @@ function NewRoom() {
 
          <main>
             <section className={ `${contentBox} ${newRoomBox}` }>
-               <img src={ logoImg } alt="Letmeask" />
+               <Logo className={ logoBox } />
                <h2>Criar uma nova sala</h2>
                <form onSubmit={ InitCreateRoomHandle( newRoom ) }>
                   <input

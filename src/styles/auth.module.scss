@@ -1,5 +1,6 @@
 $container: '.containerBox';
 $content: '.contentBox';
+    $logo: '.logoBox';
     $separator: '.contentSeparator';
     $btnCreateRoom: '.btnCreateRoom';
 $newRoom: '.newRoomBox';
@@ -63,13 +64,15 @@ $newRoom: '.newRoomBox';
     p {
         margin-top: 1.6rem;
 
-        color: 737386;
+        color: #737386;
 
         font-size: 1.4rem;
     }
 
     a { color: var(--clr-secondary) }
 }
+
+#{$logo} { height: 7.5rem }
 
 #{$content} form {
     // ***
