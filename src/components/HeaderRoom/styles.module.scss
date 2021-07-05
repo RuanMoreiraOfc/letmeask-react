@@ -1,5 +1,7 @@
 $header: '.containerBox';
 $logo: '.logoBox';
+$allButtons: '.buttonsBox';
+    $btn-max-height: 4.5rem;
 
 // ----
 
@@ -18,14 +20,6 @@ $logo: '.logoBox';
 
     // ***
 
-    > button {
-        position: absolute;
-        top: 50%;
-        right: 5vh;
-
-        transform: translateY(-50%);
-    }
-
     section {
         max-width: 112rem;
 
@@ -36,10 +30,6 @@ $logo: '.logoBox';
         justify-content: space-between;
     }
 
-    img {
-        max-height: 4.5rem;
-    }
-
     div {
         display: flex;
         gap: 1.6rem;
@@ -48,6 +38,15 @@ $logo: '.logoBox';
 
         button {
             height: auto;
+            max-height: $btn-max-height;
+        }
+
+        &#{$allButtons} {
+            gap: 3.2rem;
+
+            // ***
+
+            > button { max-width: $btn-max-height }
         }
     }
 }

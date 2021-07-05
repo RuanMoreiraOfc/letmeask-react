@@ -1,12 +1,7 @@
 $btnSignOut: '.containerBox';
 
 #{$btnSignOut} {
-    $sizeBase: 4rem;
-
     overflow: hidden;
-
-    width: $sizeBase;
-    height: $sizeBase;
 
     border: none;
     border-radius: 50%;

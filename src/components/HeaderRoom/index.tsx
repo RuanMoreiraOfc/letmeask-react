@@ -1,7 +1,5 @@
 import styles from './styles.module.scss';
 
-import logoImg from '../../assets/icons/logo.svg';
-
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -20,18 +18,21 @@ function HeaderRoom( { roomCode, children }: HeaderRoomProps ) {
    const {
       containerBox
       , logoBox
+      , buttonsBox
    } = styles;
 
    return (
       <header className={ containerBox }>
          <section>
             <Link to='/'><Logo className={ logoBox } /></Link>
-            <div>
-               <ButtonRoomCode code={ roomCode } />
-               { children }
+            <div className={ buttonsBox }>
+               <div>
+                  <ButtonRoomCode code={ roomCode } />
+                  { children }
+               </div>
+               <ButtonSignOut />
             </div>
          </section>
-         <ButtonSignOut />
       </header>
    );
 }
