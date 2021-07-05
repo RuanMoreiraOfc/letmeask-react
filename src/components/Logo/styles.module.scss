@@ -1,0 +1,17 @@
+$container: '.containerBox';
+
+#{$container} {
+    display: block;
+
+    background-image:
+        linear-gradient(90deg, currentColor 0% 50%, transparent 0%)
+        , linear-gradient(145deg, var(--clr-complementary) 30%, var(--clr-secondary));
+    ;
+
+    // ***
+
+    mask-image: url(../../assets/icons/logo.svg);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+}
