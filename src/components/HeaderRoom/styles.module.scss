@@ -1,4 +1,5 @@
 $header: '.containerBox';
+$logo: '.logoBox';
 
 // ----
 
@@ -49,4 +50,9 @@ $header: '.containerBox';
             height: auto;
         }
     }
+}
+
+#{$logo} {
+    width: 10rem;
+    height: $btn-max-height;
 }
