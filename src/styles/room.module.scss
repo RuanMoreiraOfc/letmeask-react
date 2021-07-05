@@ -40,9 +40,9 @@ $questions: '.questionsBox';
         $end: 60%;
 
         background-image:
-            radial-gradient(circle, transparent $start, #ff59f8bb 41% 47%, transparent $end),
-            radial-gradient(circle, transparent $start, #485bffbb 48% 52%, transparent $end),
-            radial-gradient(circle, transparent $start, #835afd 53% 59%, transparent $end),
+            radial-gradient(circle, transparent $start, var(--clr-secondary) 41% 47%, transparent $end),
+            radial-gradient(circle, transparent $start, var(--clr-primary) 48% 52%, transparent $end),
+            radial-gradient(circle, transparent $start, var(--clr-primary) 53% 59%, transparent $end)
         ;
 
         animation: play_loading 3s infinite ease-out;
@@ -85,7 +85,7 @@ $questions: '.questionsBox';
 
         border-radius: 100vw;
 
-        background-color: #e559f9;
+        background-color: var(--clr-secondary);
         color: #fff;
 
         font-size: 1.4rem;
@@ -131,7 +131,7 @@ $questions: '.questionsBox';
         border: none;
 
         background-color: transparent;
-        color: #835afd;
+        color: var(--clr-primary);
 
         font-size: 1.4rem;
         font-weight: inherit;

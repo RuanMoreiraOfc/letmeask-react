@@ -9,7 +9,7 @@ $isOutlined: '.outlinedBtn';
     border: none;
     border-radius: 0.8rem;
 
-    background-color: #835afd;
+    background-color: var(--clr-primary);
     color: #fff;
 
     font-weight: 500;
@@ -29,7 +29,7 @@ $isOutlined: '.outlinedBtn';
 
 #{$isOutlined} {
     background-color: #fff;
-    color: #835afd;
+    color: var(--clr-primary);
 
     border: 0.1rem solid;
 }

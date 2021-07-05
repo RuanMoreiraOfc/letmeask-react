@@ -68,9 +68,7 @@ $newRoom: '.newRoomBox';
         font-size: 1.4rem;
     }
 
-    a {
-        color: #e559f9;
-    }
+    a { color: var(--clr-secondary) }
 }
 
 #{$content} form {

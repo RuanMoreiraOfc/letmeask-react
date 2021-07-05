@@ -1,7 +1,7 @@
 $btn: '.btnRoomCode';
 
 #{$btn} {
-    $colorBase: #835afd;
+    $colorBase: var(--clr-primary);
 
     overflow: hidden;
 

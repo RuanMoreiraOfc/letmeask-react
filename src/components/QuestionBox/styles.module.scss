@@ -50,10 +50,10 @@ $user: '.userInfoBox';
 
         // ***
 
-        &[data-is-active=true] { color: #835afd }
+        &[data-is-active=true] { color: var(--clr-primary) }
 
         &:hover:not(:disabled) {
-            color: #835afd;
+            color: var(--clr-primary);
 
             filter: brightness(0.8);
         }
@@ -80,7 +80,7 @@ $user: '.userInfoBox';
 }
 
 #{$container}#{$isHighlighted} {
-    border: 0.1rem solid #835afd;
+    border: 0.1rem solid var(--clr-primary);
 
     background-color: #f4f0ff;
 }
