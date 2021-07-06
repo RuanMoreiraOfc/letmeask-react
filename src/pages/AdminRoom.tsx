@@ -10,6 +10,7 @@ import { database } from '../services/firebase';
 
 import HeaderRoom from '../components/HeaderRoom';
 import Button from '../components/Button';
+import NullQuestionsBox from '../components/NullQuestionsBox';
 import QuestionBox from '../components/QuestionBox';
 
 export default AdminRoom;
@@ -55,6 +56,7 @@ function AdminRoom() {
       containerBox
       , loadingBox
       , contentBox
+      , nullQuestionsBox
       , questionsBox
          , checkBox
          , answerBox
@@ -85,6 +87,8 @@ function AdminRoom() {
                <h1>Sala - { title }</h1>
                { questions.length > 0 && ( <span>{ questions.length } pergunta(s)</span> ) }
             </header>
+
+            { questions.length === 0 && ( <NullQuestionsBox className={ nullQuestionsBox } /> ) }
 
             <ul className={ questionsBox }>
                { [...questions].sort( (a, b) => b.likesCount - a.likesCount ).map( ({ id: questionId, likeId, likesCount, ...rest }) => (

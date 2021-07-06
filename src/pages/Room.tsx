@@ -10,6 +10,7 @@ import { database } from '../services/firebase';
 
 import HeaderRoom from '../components/HeaderRoom';
 import Button from '../components/Button';
+import NullQuestionsBox from '../components/NullQuestionsBox';
 import QuestionBox from '../components/QuestionBox';
 
 export default Room;
@@ -54,6 +55,7 @@ function Room() {
       , loadingBox
       , contentBox
          , userBox
+      , nullQuestionsBox
       , questionsBox
          , likeBox
    } = styles;
@@ -93,6 +95,8 @@ function Room() {
                   <Button type="submit" disabled={ !user || !newQuestion } >Enviar Pergunta</Button>
                </footer>
             </form>
+
+            { questions.length === 0 && ( <NullQuestionsBox className={ nullQuestionsBox } /> ) }
 
             <ul className={ questionsBox }>
                { questions.map( ({ id: questionId, likeId, likesCount, ...rest }) => (

@@ -8,6 +8,7 @@ $container: '.containerBox';
 $loading: '.loadingBox';
 $content: '.contentBox';
     $user: '.userBox';
+$nullQuestions: '.nullQuestionsBox';
 $questions: '.questionsBox';
     $likeBtn: '.likeBox';
     $checkBtn: '.checkBox';
@@ -164,6 +165,10 @@ $questions: '.questionsBox';
         font-weight: 500;
     }
 }
+
+
+#{$nullQuestions} { margin-top: 20vh }
+form + #{$nullQuestions} { margin-top: 6.4rem }
 
 #{$questions} {
     list-style: none;
