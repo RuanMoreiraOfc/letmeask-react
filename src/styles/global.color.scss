@@ -8,6 +8,18 @@
         , var(--lighting-background)
     );
 
+    --clr-background-dark: hsl(
+        0
+        , 0%
+        , calc( var(--lighting-background) - 11% )
+    );
+
+    --clr-background-darker: hsl(
+        256
+        , 100%
+        , var(--lighting-background)
+    );
+
     --clr-background-lighter: hsl(
         0
         , 0%
