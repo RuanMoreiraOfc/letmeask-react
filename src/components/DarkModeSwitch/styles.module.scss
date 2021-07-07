@@ -1,0 +1,21 @@
+$container: '.containerBox';
+$icon: '.iconBox';
+
+#{$container} {
+    $spacingFromCorners: 2vh;
+
+    z-index: 1;
+
+    position: fixed;
+    right: $spacingFromCorners;
+    bottom: $spacingFromCorners;
+}
+
+#{$icon} {
+    filter: invert(.85);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
