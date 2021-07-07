@@ -21,7 +21,7 @@ $questions: '.questionsBox';
     font-size: 10rem;
 
     position: absolute;
-    top: 50%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
 
@@ -87,6 +87,8 @@ $questions: '.questionsBox';
 
         background-color: var(--clr-secondary);
         color: var(--clr-text-lighter);
+
+        text-align: center;
 
         font-size: var(--fs-details);
         font-weight: 500;
