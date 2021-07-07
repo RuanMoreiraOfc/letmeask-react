@@ -82,13 +82,13 @@ $user: '.userInfoBox';
 #{$container}#{$isHighlighted} {
     border: 0.1rem solid var(--clr-primary);
 
-    background-color: #f4f0ff;
+    background-color: var(--clr-background-darker);
 }
 
 #{$container}#{$isAnswered} {
     border: none;
 
-    background-color: #dbdcdd;
+    background-color: var(--clr-background-dark);
 
     img { filter: grayscale(1) }
 }
