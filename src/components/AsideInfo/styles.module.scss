@@ -29,7 +29,9 @@ $secondary: '.secondary';
     strong {
         margin-top: 1.6rem;
 
-        font: 700 3.6rem 'Poopins', sans-serif;
+        font-family: var(--ff-title);
+        font-size: 3.6rem;
+        font-weight: 700;
         line-height: 4.2rem;
     }
 

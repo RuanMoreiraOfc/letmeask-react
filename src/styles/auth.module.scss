@@ -60,8 +60,7 @@ $newRoom: '.newRoomBox';
     h2 {
         margin: 6.4rem 0 2.4rem;
 
-        font-size: 2.4rem;
-        font-family: 'Poppins', sans-serif;
+        font-size: var(--fs-title-big);
     }
 
     p {
@@ -69,7 +68,7 @@ $newRoom: '.newRoomBox';
 
         color: #737386;
 
-        font-size: 1.4rem;
+        font-size: var(--fs-details);
     }
 
     a { color: var(--clr-secondary) }
@@ -106,7 +105,7 @@ $newRoom: '.newRoomBox';
     margin: 3.2rem 0;
 
     color: #a8a8b3;
-    font-size: 1.4rem;
+    font-size: var(--fs-details);
 
     display: flex;
     align-items: center;

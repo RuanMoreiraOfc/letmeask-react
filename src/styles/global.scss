@@ -23,7 +23,13 @@ body {
 }
 
 body, input, button, textarea {
-    font: 400 16px 'Roboto', sans-serif;
+    font-family: var(--ff-text);
+    font-size: var(--fs-text);
+    font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--ff-title);
 }
 
 a, button {

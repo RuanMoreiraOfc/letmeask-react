@@ -23,14 +23,13 @@ $third: '.third';
 
         color: #29292E;
 
-        font-family: 'Poppins', sans-serif;
         font-size: 1.8rem;
     }
 
     p {
         color: #737380;
 
-        font-size: 1.4rem;
+        font-size: var(--fs-details);
     }
 }
 

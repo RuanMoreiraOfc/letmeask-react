@@ -76,8 +76,7 @@ $questions: '.questionsBox';
     h1 {
         color: #29292e;
 
-        font-family: 'Poppins', sans-serif;
-        font-size: 2.4rem;
+        font-size: var(--fs-title-big);
     }
 
     span {
@@ -89,7 +88,7 @@ $questions: '.questionsBox';
         background-color: var(--clr-secondary);
         color: #fff;
 
-        font-size: 1.4rem;
+        font-size: var(--fs-details);
         font-weight: 500;
     }
 }
@@ -124,7 +123,7 @@ $questions: '.questionsBox';
     > span {
         color: #737380;
 
-        font-size: 1.4rem;
+        font-size: var(--fs-details);
         font-weight: 500;
     }
 
@@ -134,7 +133,7 @@ $questions: '.questionsBox';
         background-color: transparent;
         color: var(--clr-primary);
 
-        font-size: 1.4rem;
+        font-size: var(--fs-details);
         font-weight: inherit;
 
         text-decoration: underline;
@@ -161,7 +160,7 @@ $questions: '.questionsBox';
 
         color: #29292e;
 
-        font-size: 1.4rem;
+        font-size: var(--fs-details);
         font-weight: 500;
     }
 }
