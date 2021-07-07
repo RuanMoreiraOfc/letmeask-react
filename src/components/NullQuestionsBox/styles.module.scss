@@ -21,13 +21,13 @@ $third: '.third';
         margin-top: 1.6rem;
         margin-bottom: 0.8rem;
 
-        color: #29292E;
+        color: var(--clr-text-text);
 
         font-size: 1.8rem;
     }
 
     p {
-        color: #737380;
+        color: var(--clr-text-light);
 
         font-size: var(--fs-details);
     }

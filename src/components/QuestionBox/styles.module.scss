@@ -13,13 +13,13 @@ $user: '.userInfoBox';
 
     box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.04);
 
-    background-color: #fefefe;
+    background-color: var(--clr-background-lighter);
 
     // ***
 
     &:not( :first-of-type ) { margin-top: 0.8rem }
 
-    p { color: #29292e }
+    p { color: var(--clr-text) }
 
     footer {
         margin-top: 2.4rem;
@@ -37,7 +37,7 @@ $user: '.userInfoBox';
         border: none;
 
         background-color: transparent;
-        color: #737380;
+        color: var(--clr-text-light);
 
         display: grid;
         align-items: center;
@@ -113,7 +113,7 @@ $user: '.userInfoBox';
     span {
         margin-left: 0.8rem;
 
-        color: #737380;
+        color: var(--clr-text-light);
 
         font-size: var(--fs-details);
     }

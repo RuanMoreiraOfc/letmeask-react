@@ -74,7 +74,7 @@ $questions: '.questionsBox';
     // ***
 
     h1 {
-        color: #29292e;
+        color: var(--clr-text);
 
         font-size: var(--fs-title-big);
     }
@@ -86,7 +86,7 @@ $questions: '.questionsBox';
         border-radius: 100vw;
 
         background-color: var(--clr-secondary);
-        color: #fff;
+        color: var(--clr-text-lighter);
 
         font-size: var(--fs-details);
         font-weight: 500;
@@ -105,7 +105,7 @@ $questions: '.questionsBox';
         border: none;
         border-radius: 0.8rem;
 
-        background-color: #fefefe;
+        background-color: var(--clr-background-lighter);
 
         box-shadow: 0 0.2rem 1.2rem rgba(0, 0, 0, 0.04);
 
@@ -121,7 +121,7 @@ $questions: '.questionsBox';
     }
 
     > span {
-        color: #737380;
+        color: var(--clr-text-light);
 
         font-size: var(--fs-details);
         font-weight: 500;
@@ -158,7 +158,7 @@ $questions: '.questionsBox';
     span {
         margin-left: 8px;
 
-        color: #29292e;
+        color: var(--clr-text);
 
         font-size: var(--fs-details);
         font-weight: 500;

@@ -91,7 +91,7 @@ $newRoom: '.newRoomBox';
         border: 0.1rem solid #a8a8b3;
         border-radius: 0.8rem;
 
-        background-color: #fff;
+        background-color: var(--clr-background-lighter);
     }
 
     button {

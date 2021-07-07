@@ -10,7 +10,7 @@ $btn: '.btnRoomCode';
     border: 0.1rem solid $colorBase;
     border-radius: 0.8rem;
 
-    background-color: #fff;
+    background-color: var(--clr-background-lighter);
 
     display: flex;
 

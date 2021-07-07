@@ -10,7 +10,7 @@ $secondary: '.secondary';
     padding: 12rem 8rem;
 
     background-color: var(--clr-primary);
-    color: #fff;
+    color: var(--clr-text-lighter);
 
     display: flex;
     flex-direction: column;
@@ -37,8 +37,6 @@ $secondary: '.secondary';
 
     p {
         margin-top: 1.6rem;
-
-        color: #fff;
 
         font-size: 2.4rem;
         line-height: 3.2rem;

@@ -9,7 +9,7 @@
     // ***
 
     &:focus {
-        border: 0.25rem solid #29292e !important;
+        border: 0.25rem solid var(--clr-text) !important;
     }
 }
 
@@ -18,8 +18,8 @@ html {
 }
 
 body {
-    background: #f8f8f8;
-    color: #29292e;
+    background: var(--clr-background);
+    color: var(--clr-text);
 }
 
 body, input, button, textarea {
