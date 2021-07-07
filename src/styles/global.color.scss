@@ -1,4 +1,43 @@
 :root {
+    --lighting-background: 97%;
+    --lighting-text: 17%;
+
+    --clr-background: hsl(
+        0
+        , 0%
+        , var(--lighting-background)
+    );
+
+    --clr-background-lighter: hsl(
+        0
+        , 0%
+        , calc( var(--lighting-background) + 3% )
+    );
+
+    --clr-text: hsl(
+        0
+        , 0%
+        , var(--lighting-text)
+    );
+
+    --clr-text-light: hsl(
+        0
+        , 5%
+        , calc( var(--lighting-text) + 34% )
+    );
+
+    --clr-text-lighter: hsl(
+        0
+        , 0%
+        , calc( var(--lighting-text) + 83% )
+    );
+
+    // ***
+
+    --lighting-primary: 67%;
+    --lighting-secondary: 67%;
+    --lighting-complementary: 64%;
+
     --hue-primary: 255;
     --hue-secondary: 48;
     --hue-complementary: 21;
@@ -6,18 +45,18 @@
     --clr-primary: hsl(
         var(--hue-primary)
         , 98%
-        , 67%
+        , var(--lighting-primary)
     );
 
     --clr-secondary: hsl(
         calc( var(--hue-primary) + var(--hue-secondary) )
         , 100%
-        , 67%
+        , var(--lighting-secondary)
     );
 
     --clr-complementary: hsl(
         calc( var(--hue-primary) - var(--hue-complementary) )
         , 100%
-        , 64%
+        , var(--lighting-complementary)
     );
 }
