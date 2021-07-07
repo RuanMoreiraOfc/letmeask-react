@@ -13,6 +13,19 @@
     }
 }
 
+:root.darkmode {
+    --lighting-background: 10%;
+    --lighting-text: 80%;
+
+    // ----
+
+    --lighting-primary: 57%;
+    --lighting-secondary: 57%;
+    --lighting-complementary: 50%;
+
+    --hue-complementary: 50;
+}
+
 html {
     font-size: 62.5%;
 }
