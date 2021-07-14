@@ -42,7 +42,7 @@ function DarkModeSwitch() {
             aria-label="Toggle lightmode/darkmode"
             checked={ isActive }
             onChange={ () => setIsActive( e => !e ) }
-            onColor='#45abcd'
+            onColor='#2585FE'
             uncheckedIcon={
                <img className={ iconBox } src={ darkModeImg } alt="DarkMode"/>
             }
