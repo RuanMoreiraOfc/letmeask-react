@@ -1,4 +1,6 @@
 :root {
+    --theme-is-dark: 0;
+
     --lighting-background: 97%;
     --lighting-text: 17%;
 
@@ -71,4 +73,19 @@
         , 100%
         , var(--lighting-complementary)
     );
+}
+
+:root.darkmode {
+    --theme-is-dark: 1;
+
+    --lighting-background: 10%;
+    --lighting-text: 80%;
+
+    // ----
+
+    --lighting-primary: 57%;
+    --lighting-secondary: 57%;
+    --lighting-complementary: 50%;
+
+    --hue-complementary: 50;
 }
