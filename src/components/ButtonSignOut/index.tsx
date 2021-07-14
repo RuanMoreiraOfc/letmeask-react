@@ -9,6 +9,12 @@ export default ButtonSignOut;
 function ButtonSignOut( ) {
    const { user, SignOut } = useAuth();
 
+   function HandleSignOut() {
+      if ( window.confirm('Deseja sair dessa conta?') === false ) return;
+
+      SignOut();
+   }
+
    // ***
 
    const { containerBox } = styles;
@@ -17,9 +23,9 @@ function ButtonSignOut( ) {
       <Fragment>
          { user && (
             <button
-               title="Deseja Sair?"
+               title="Deseja sair dessa conta?"
                type="button"
-               onClick={ SignOut }
+               onClick={ HandleSignOut }
                className={ containerBox }
             >
                <img src={ user.avatar } alt={ user.name } />
