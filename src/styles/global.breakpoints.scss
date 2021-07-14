@@ -1,0 +1,23 @@
+@mixin for-phone-ultra-small-landscape {
+    @media ( max-height: 319px ) { @content; }
+}
+
+@mixin for-phone-extra-small-landscape {
+    @media ( max-height: 359px ) { @content; }
+}
+
+@mixin for-phone-small-landscape {
+    @media ( max-height: 360px ) { @content; }
+}
+
+@mixin for-tablet-portrait {
+    @media ( max-width: 768px ) { @content; }
+}
+
+@mixin for-tablet-portrait-up {
+    @media ( max-width: 865px ) { @content; }
+}
+
+@mixin for-tablet-landscape {
+    @media ( max-width: 1024px ) { @content; }
+}
