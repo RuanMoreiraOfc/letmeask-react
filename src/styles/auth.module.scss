@@ -1,3 +1,5 @@
+@import './global.breakpoints.scss';
+
 $container: '.containerBox';
 $content: '.contentBox';
     $logo: '.logoBox';
@@ -5,15 +7,20 @@ $content: '.contentBox';
     $btnCreateRoom: '.btnCreateRoom';
 $newRoom: '.newRoomBox';
 
-// @collapse
+// \@collapse
 
 #{$container} {
     height: 100%;
 
-    display: flex;
-    align-items: stretch;
+    display: grid;
+    grid-template-columns: 1.0295fr 1fr;
+    grid-template-rows: 100%;
 
     position: relative;
+
+    @include for-tablet-portrait-up { grid-template-columns: 100% }
+
+    // ***
 
     > button {
         $distanceFromCorner: 2.5rem;
@@ -27,12 +34,14 @@ $newRoom: '.newRoomBox';
     }
 }
 
-#{$container} main {
-    flex: 8;
+#{$container} aside { @include for-tablet-portrait-up { display: none } }
 
+#{$container} main {
     padding: 0 3.2rem;
 
-    display: flex;
+    display: grid;
+    grid-template-columns: #{ 'min(92.75vw, 320px)' };
+    grid-template-rows: 100vh;
     align-items: center;
     justify-content: center;
 }
@@ -40,11 +49,6 @@ $newRoom: '.newRoomBox';
 // ----
 
 #{$content} {
-    width: 100%;
-    max-width: 32rem;
-
-    text-align: center;
-
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -74,7 +78,11 @@ $newRoom: '.newRoomBox';
     a { color: var(--clr-secondary) }
 }
 
-#{$logo} { height: 7.5rem }
+#{$logo} {
+    height: 7.5rem;
+
+    @include for-phone-ultra-small-landscape { display: none !important }
+}
 
 #{$content} form {
     // ***
@@ -110,6 +118,9 @@ $newRoom: '.newRoomBox';
     display: flex;
     align-items: center;
 
+    @include for-phone-small-landscape { margin: 2.4rem 0 }
+    @include for-phone-extra-small-landscape { margin: 1.6rem 0 }
+
     // ***
 
     &::before, &::after {
@@ -135,4 +146,6 @@ $newRoom: '.newRoomBox';
     margin-top: 3.2rem;
 
     background-color: #ea4335 !important;
+
+    @include for-phone-extra-small-landscape { margin-top: 0.8rem }
 }
