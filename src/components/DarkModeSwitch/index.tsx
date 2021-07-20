@@ -8,7 +8,11 @@ import Switch from "react-switch";
 
 export default DarkModeSwitch;
 
-function DarkModeSwitch() {
+type DarkModeSwitchProps = {
+   className?: string;
+}
+
+function DarkModeSwitch( { className } : DarkModeSwitchProps ) {
    const [isActive, setIsActive] = useState(false);
 
    const queryName = 'prefers-color-scheme';
@@ -27,7 +31,7 @@ function DarkModeSwitch() {
 
       localStorage.setItem(queryName, theme);
       document.documentElement.className = `${theme}mode`;
-   }, [isActive])
+   }, [isActive]);
 
    // ***
 
@@ -36,8 +40,16 @@ function DarkModeSwitch() {
       , iconBox
    } = styles;
 
+   const enhancedSwitch = (() => {
+      const switchClasses = [containerBox];
+
+      if ( className ) switchClasses.push(className);
+
+      return switchClasses.join(' ');
+   })();
+
    return (
-      <div className={ containerBox }>
+      <div className={ enhancedSwitch } id='rc-dms'>
          <Switch
             aria-label="Toggle lightmode/darkmode"
             checked={ isActive }
