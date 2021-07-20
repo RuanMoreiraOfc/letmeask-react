@@ -5,6 +5,7 @@
 }
 
 $container: '.containerBox';
+$closeRoomButton: '.closeRoomBox';
 $loading: '.loadingBox';
 $content: '.contentBox';
     $user: '.userBox';
@@ -16,6 +17,11 @@ $questions: '.questionsBox';
     $deleteBtn: '.deleteBox';
 
 // ----
+
+#{$closeRoomButton} {
+    color: var(--clr-text);
+    border-color: var(--clr-primary);
+}
 
 #{$loading} {
     font-size: 10rem;

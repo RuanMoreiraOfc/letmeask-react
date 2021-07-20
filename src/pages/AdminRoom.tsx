@@ -54,6 +54,7 @@ function AdminRoom() {
 
    const {
       containerBox
+      , closeRoomBox
       , loadingBox
       , contentBox
       , nullQuestionsBox
@@ -68,6 +69,7 @@ function AdminRoom() {
          <HeaderRoom roomCode={ roomCode } >
             { !isLoading && (
                <Button
+                  className={ closeRoomBox }
                   isOutlined
                   disabled={ isClosed }
                   onClick={ InitEndRoomHandle(roomCode, history) }
