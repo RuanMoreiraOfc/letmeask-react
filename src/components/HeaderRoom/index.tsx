@@ -3,6 +3,7 @@ import styles from './styles.module.scss';
 import { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
 
+import HamburgerMenuButton from '../HamburgerMenuButton';
 import Logo from '../Logo';
 import ButtonRoomCode from '../ButtonRoomCode';
 import ButtonSignOut from '../ButtonSignOut';
@@ -24,6 +25,11 @@ function HeaderRoom( { roomCode, children }: HeaderRoomProps ) {
 
    return (
       <header className={ containerBox }>
+         <HamburgerMenuButton>
+            <ButtonRoomCode code={ roomCode } />
+            { children }
+         </HamburgerMenuButton>
+
          <section className={ contentBox }>
             <Link to='/'><Logo className={ logoBox } /></Link>
             <div className={ buttonsBox }>
