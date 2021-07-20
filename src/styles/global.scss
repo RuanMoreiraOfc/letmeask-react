@@ -15,6 +15,12 @@
 
 html {
     font-size: 62.5%;
+
+    // ***
+
+    &::-webkit-scrollbar { width: 1.25vmax }
+    &::-webkit-scrollbar-thumb { background-color: var(--clr-background) }
+    &::-webkit-scrollbar-track-piece { background-color: var(--clr-text) }
 }
 
 body {
