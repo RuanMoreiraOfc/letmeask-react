@@ -17,13 +17,14 @@ type HeaderRoomProps = {
 function HeaderRoom( { roomCode, children }: HeaderRoomProps ) {
    const {
       containerBox
+      , contentBox
       , logoBox
       , buttonsBox
    } = styles;
 
    return (
       <header className={ containerBox }>
-         <section>
+         <section className={ contentBox }>
             <Link to='/'><Logo className={ logoBox } /></Link>
             <div className={ buttonsBox }>
                <div>

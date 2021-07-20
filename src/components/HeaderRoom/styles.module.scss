@@ -1,4 +1,7 @@
+@import "../../styles/global.breakpoints.scss";
+
 $header: '.containerBox';
+$content: '.contentBox';
 $logo: '.logoBox';
 $allButtons: '.buttonsBox';
     $btn-max-height: 4.5rem;
@@ -12,29 +15,37 @@ $allButtons: '.buttonsBox';
 
     background-color: var(--clr-background-lighter);
 
+    display: flex;
+
     z-index: 1;
 
     position: sticky;
     top: 0;
     bottom: 0;
+}
+
+#{$content} {
+    max-width: 112rem;
+    width: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+
+    position: relative;
 
     // ***
 
-    section {
-        max-width: 112rem;
-
-        margin: 0 auto;
-
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
+    a { @include for-tablet-portrait-up { margin: 0 auto } }
 
     div {
         display: flex;
         gap: 1.6rem;
 
         // ***
+
+        > * { @include for-tablet-portrait-up { display: none } }
 
         button {
             height: auto;
@@ -46,7 +57,16 @@ $allButtons: '.buttonsBox';
 
             // ***
 
-            > button { max-width: $btn-max-height }
+            > button {
+                max-width: $btn-max-height;
+
+                @include for-tablet-portrait-up {
+                    display: block;
+
+                    position: absolute;
+                    right: 0;
+                }
+            }
         }
     }
 }
