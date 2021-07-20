@@ -1,0 +1,230 @@
+@import "../../styles/global.animations.scss";
+@import "../../styles/global.breakpoints.scss";
+
+$container: '.containerBox';
+$content: '.contentBox';
+$switch: '.switchBox';
+    $duplicatedSwitch: '.isDuplicated';
+
+// @collapse
+
+#{$container} {
+    display: none;
+    align-items: center;
+
+    z-index: 1;
+
+    position: relative;
+
+    @include for-tablet-portrait-up { display: flex }
+}
+
+#{$container} input {
+    opacity: 0;
+
+    pointer-events: none;
+
+    position: absolute;
+
+    // ***
+
+    @mixin drawer-when-drawer-visibility-is($state) {
+        &[data-is-active=#{ $state }] ~ #{$content} { @content; }
+    }
+
+    @mixin drawer-menu-when-drawer-visibility-is($state) {
+        &[data-is-active=#{ $state }] + label { @content; }
+    }
+
+    @mixin drawer-menu-lines-when-drawer-visibility-is($state) {
+        &[data-is-active=#{ $state }] + label span { @content; }
+    }
+
+    // ----
+
+    @include drawer-when-drawer-visibility-is('true') {
+        animation-timing-function: ease-out;
+        animation-name: play-slide-in;
+    }
+
+    @include drawer-when-drawer-visibility-is('false') {
+        animation-timing-function: ease-in;
+        animation-name: play-slide-out;
+    }
+
+    // ***
+
+    @include drawer-menu-when-drawer-visibility-is('true') {
+        transition-timing-function: ease-out;
+    }
+
+    @include drawer-menu-when-drawer-visibility-is('false') {
+        transition-timing-function: ease-in;
+        transform: none;
+    }
+
+    // ***
+
+    @include drawer-menu-lines-when-drawer-visibility-is('true') {
+        &:nth-child(2n + 1) { animation-name: play-squish, play-rotate }
+        &:nth-child(2) { animation-name: play-fade }
+    }
+
+    @include drawer-menu-lines-when-drawer-visibility-is('false') {
+        &:nth-child(2n + 1) { animation-name: play-loose, play-rotate-reverse }
+        &:nth-child(2) { animation-name: play-grow }
+    }
+
+    // Animations
+
+    // *** Drawer ***
+
+    @keyframes play-slide-in {
+        to { transform: translateX(0) }
+    }
+    @keyframes play-slide-out {
+        from { transform: translateX(0) }
+    }
+
+    // *** Menu ***
+
+    @keyframes play-fade {
+        50%, to { opacity: 0 }
+    }
+    @keyframes play-squish {
+        50%, to { top: var(--squish-state) }
+    }
+    @keyframes play-rotate {
+        50% { transform: none }
+        to { transform: rotateZ( var(--cross-state) ) }
+    }
+
+    @keyframes play-grow {
+        from { transform: scaleX(0) }
+        to {
+            transform: scaleX(1);
+            opacity: 1;
+        }
+    }
+    @keyframes play-loose {
+        from, 50% { top: var(--squish-state) }
+        to { top: var(--burger-state) }
+    }
+    @keyframes play-rotate-reverse {
+        from { transform: rotateZ( var(--cross-state) ) }
+        50%, to { transform: none }
+    }
+}
+
+#{$container} label {
+    width: 3.5rem;
+    height: 70%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    cursor: pointer;
+
+    position: absolute;
+
+    transition-property: transform;
+    // transition-duration: 200ms;
+
+    // ***
+
+    &:focus-within {
+        border: 0.25rem solid var(--clr-text);
+    }
+
+    span {
+        & {
+            --height: 15%;
+            --looking-direction: 1;
+
+            --cross-state: calc( 45deg * var(--looking-direction) );
+            --burger-state: calc( 50% * var(--looking-direction) );
+            --squish-state: calc( var(--height) * var(--looking-direction) );
+
+            // ***
+
+            &:last-child { --looking-direction: -1 }
+        }
+
+        // ----
+
+        display: block;
+
+        width: 100%;
+        height: var(--height);
+
+        border-radius: 0.8rem;
+
+        background-color: currentColor;
+        filter: invert(0.75);
+
+        position: relative;
+
+        @include animation_basics;
+
+        // ***
+
+        &:nth-child(2n + 1) { top: var(--burger-state) }
+    }
+}
+
+#{$content} {
+    width: 75%;
+    min-width: 280px;
+
+    padding: 12.55rem 2rem 0;
+
+    // background-color: var(--clr-background-lighter);
+    // background-color: var(--clr-background);
+    background-color: var(--clr-background-darker);
+
+    z-index: -1;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    transform: translateX(-100%);
+
+    @include animation_basics;
+
+    // transform: translateX(-100%);
+
+    // transition: 0.2s transform;
+
+    // ***
+
+    > div:not(:last-child) {
+        width: 100%;
+        height: min-content;
+
+        display: flex;
+        flex-direction: column;
+        gap: 0.8rem;
+
+        > * { flex: 5rem }
+    }
+}
+
+#{$switch} {
+    all: initial;
+    margin-bottom: 2vh;
+}
+
+#{$duplicatedSwitch} {
+    @include for-tablet-portrait-up {
+        display: none;
+    }
+}
