@@ -1,3 +1,5 @@
+@import "./global.breakpoints.scss";
+
 @function get_assets_icon($icon) {
     $assetsPath: '../assets/icons/';
 
@@ -27,9 +29,11 @@ $questions: '.questionsBox';
     font-size: 10rem;
 
     position: absolute;
-    top: 60%;
+    top: 57.5%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @include for-tablet-landscape { top: 55% }
 
     // ***
 
@@ -68,6 +72,8 @@ $questions: '.questionsBox';
 #{$content} {
     max-width: 80rem;
 
+    padding: 0 0.8rem;
+
     margin: 0 auto;
 }
 
@@ -77,12 +83,18 @@ $questions: '.questionsBox';
     display: flex;
     align-items: center;
 
+    @include for-tablet-portrait-up { justify-content: center }
+
     // ***
 
     h1 {
         color: var(--clr-text);
 
         font-size: var(--fs-title-big);
+
+        line-height: 1.1;
+
+        @include for-tablet-portrait-up { text-align: center }
     }
 
     span {
