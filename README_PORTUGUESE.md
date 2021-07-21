@@ -30,6 +30,15 @@ Projeto feito durante **NLW#6(Next Level Week)** com **[Diego Fernandes][btn-tut
 
 Essa branch é o **NEXT LEVEL** desta aplicação.
 
+## :partying_face: Novas Funcionalidade <span id="id-features"/>
+
+Aqui algumas diferenças entre as branches **MASTER** e **NEXT LEVEL**!
+
+- Estilos melhores graças ao uso de variáveis
+- Aviso para salas vazias ( 'Convide seus amigos' )
+- Modo Escuro + Botão para alternar
+- Responsividade até celulares **280px** (Galaxy Fold)
+
 ## :triangular_ruler: Tecnologia <span id="id-about"/>
 
 As seguintes ferramentas foram usadas na construção do projeto:
@@ -46,6 +55,9 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Home:
 ![Home]
 
+### Home - Mobile:
+![Home | Mobile-Light]
+
 ### Criando uma nova sala:
 ![Creating New Room]
 
@@ -54,6 +66,44 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 ### Visão do público:
 ![Audience View]
+
+### Audience View - Mobile:
+![Audience View | Mobile-Dark]
+
+### Mobile Portrait - Home | Admin View:
+
+<div align='right'>
+    <img
+      alt="Audience View | Mobile-Light"
+      title="Audience View | Mobile-Light"
+      width="350"
+      align='left'
+      src="https://user-images.githubusercontent.com/36450847/126413204-a5d87c80-b02a-4d23-84a0-9a6f6c1cd133.png"
+    />
+    <img
+      alt="Admin View | Mobile-Dark"
+      title="Admin View | Mobile-Dark"
+      width="350"
+      src="https://user-images.githubusercontent.com/36450847/126413167-3c495a62-5873-4747-9bca-917c7b8aaf44.png"
+    />
+    <br/>
+    <br/>
+    <img
+      alt="Home | Mobile-Dark"
+      title="Home | Mobile-Dark"
+      width="350"
+      align='left'
+      src="https://user-images.githubusercontent.com/36450847/126410172-594201c6-8e4b-443c-889d-bc993f0a343a.png"
+    />
+    <img
+      alt="Admin View | Mobile-Light"
+      title="Admin View | Mobile-Light"
+      width="350"
+      src="https://user-images.githubusercontent.com/36450847/126410258-d489c1f2-317b-49b3-9f15-0be1cba4ada3.png"
+    />
+</div>
+
+<br/>
 
 ## [:eyes: Preview][btn-preview] <span id="id-preview"/>
 
@@ -171,7 +221,16 @@ Este projeto está sob a Licença MIT. Leia a [LICENÇA][btn-license] para mais 
 [Firebase]: https://firebase.google.com
 
 <!-- *** SCREENSHOTS *** -->
+[Home | Mobile-Dark]: https://user-images.githubusercontent.com/36450847/126410172-594201c6-8e4b-443c-889d-bc993f0a343a.png
+[Home | Mobile-Light]: https://user-images.githubusercontent.com/36450847/126410097-60c1d6a6-888c-446d-94d8-abf061d69a52.png
 [Home]: https://user-images.githubusercontent.com/36450847/124034099-2cec2d80-d9d1-11eb-9b8a-cc1542848b07.jpg
+
 [Creating New Room]: https://user-images.githubusercontent.com/36450847/124034137-37a6c280-d9d1-11eb-9317-21c24d83cc8d.jpg
+
+[Admin View | Mobile-Dark]: https://user-images.githubusercontent.com/36450847/126413167-3c495a62-5873-4747-9bca-917c7b8aaf44.png
+[Admin View | Mobile-Light]: https://user-images.githubusercontent.com/36450847/126410258-d489c1f2-317b-49b3-9f15-0be1cba4ada3.png
 [Admin View]: https://user-images.githubusercontent.com/36450847/124034180-45f4de80-d9d1-11eb-82e2-e155ac0b6c01.jpg
+
+[Audience View | Mobile-Dark]: https://user-images.githubusercontent.com/36450847/126410194-9fd9b6db-c757-4e34-9e07-9b8cb0af0994.png
+[Audience View | Mobile-Light]: https://user-images.githubusercontent.com/36450847/126413204-a5d87c80-b02a-4d23-84a0-9a6f6c1cd133.png
 [Audience View]: https://user-images.githubusercontent.com/36450847/124034175-43928480-d9d1-11eb-8e98-a16fb9c83f92.jpg
